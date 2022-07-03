@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Man_U_FactureEditor Editor Win64 Development (Man_U_Facture)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Man_U_Facture.json",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        },
+        {
+            "name": "Win32",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default.json",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

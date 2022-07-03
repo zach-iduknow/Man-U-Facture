@@ -1,0 +1,47 @@
+[
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\AlanCharacter.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\AlanCharacter.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\AlanController.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\AlanController.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\Man_U_Facture.Build.cs",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\Man_U_Facture.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\Man_U_Facture.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\Man_U_FactureGameModeBase.cpp",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Source\\Man_U_Facture\\Man_U_FactureGameModeBase.h",
+		"command": "\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.32.31326\\bin\\HostX64\\x64\\cl.exe\" @\"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\.vscode\\compileCommands_Default\\Man_U_Facture.211.rsp\"",
+		"directory": "C:\\UE_5.0\\Engine\\Source"
+	}
+]

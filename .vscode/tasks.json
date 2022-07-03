@@ -1,0 +1,1177 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Man_U_Facture Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Test",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Test",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Win64 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Test",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Shipping",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Shipping",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Win64 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Win64 Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Win64",
+				"Shipping",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Debug Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Debug",
+				"-ServerConfig=Debug",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Debug Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Debug Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Debug",
+				"-ServerConfig=Debug",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Debug Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Debug Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Debug",
+				"-ServerConfig=Debug",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_Facture Android Debug Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Android Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android DebugGame Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=DebugGame",
+				"-ServerConfig=DebugGame",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android DebugGame Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android DebugGame Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=DebugGame",
+				"-ServerConfig=DebugGame",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android DebugGame Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android DebugGame Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=DebugGame",
+				"-ServerConfig=DebugGame",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_Facture Android DebugGame Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Android DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Development Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Development",
+				"-ServerConfig=Development",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Development Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Development Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Development",
+				"-ServerConfig=Development",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Development Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Development Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Development",
+				"-ServerConfig=Development",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_Facture Android Development Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Android Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Test",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Test Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Test",
+				"-ServerConfig=Test",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Test Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Test Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Test",
+				"-ServerConfig=Test",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Test Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Test Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Test",
+				"-ServerConfig=Test",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_Facture Android Test Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Test",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Android Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Test",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Shipping",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Shipping Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Shipping",
+				"-ServerConfig=Shipping",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Shipping Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Shipping Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Shipping",
+				"-ServerConfig=Shipping",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Build",
+				"Man_U_Facture Android Shipping Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Shipping Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-Project=C:/Users/teamc/Documents/Projects/Unreal Projects/Man-U-Facture/Man_U_Facture.uproject",
+				"-noP4",
+				"-ClientConfig=Shipping",
+				"-ServerConfig=Shipping",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Man_U_Facture Android Shipping Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Shipping",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_Facture Android Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_Facture Android Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_Facture",
+				"Android",
+				"Shipping",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"Debug",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"DebugGame",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Man_U_FactureEditor Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		},
+		{
+			"label": "Man_U_FactureEditor Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Man_U_FactureEditor",
+				"Win64",
+				"Development",
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "C:\\UE_5.0"
+			}
+		}
+	]
+}

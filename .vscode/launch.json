@@ -1,0 +1,152 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Man_U_Facture (Debug)",
+			"request": "launch",
+			"program": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+			"preLaunchTask": "Man_U_Facture Win64 Debug Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_Facture (DebugGame)",
+			"request": "launch",
+			"program": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+			"preLaunchTask": "Man_U_Facture Win64 DebugGame Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_Facture (Development)",
+			"request": "launch",
+			"program": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Binaries\\Win64\\UnrealGame.exe",
+			"preLaunchTask": "Man_U_Facture Win64 Development Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_Facture (Test)",
+			"request": "launch",
+			"program": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+			"preLaunchTask": "Man_U_Facture Win64 Test Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_Facture (Shipping)",
+			"request": "launch",
+			"program": "C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+			"preLaunchTask": "Man_U_Facture Win64 Shipping Build",
+			"args": [
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_FactureEditor (Debug)",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+			"preLaunchTask": "Man_U_FactureEditor Win64 Debug Build",
+			"args": [
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject"
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_FactureEditor (DebugGame)",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+			"preLaunchTask": "Man_U_FactureEditor Win64 DebugGame Build",
+			"args": [
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject"
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Launch Man_U_FactureEditor (Development)",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+			"preLaunchTask": "Man_U_FactureEditor Win64 Development Build",
+			"args": [
+				"C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject"
+			],
+			"cwd": "C:\\UE_5.0",
+			"stopAtEntry": false,
+			"console": "externalTerminal",
+			"type": "cppvsdbg",
+			"visualizerFile": "C:\\UE_5.0\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+			"sourceFileMap": {
+				"D:\build\++UE5\Sync": "C:\\UE_5.0"
+			}
+		},
+		{
+			"name": "Generate Project Files",
+			"type": "coreclr",
+			"request": "launch",
+			"program": "C:\\UE_5.0\\Engine\\Binaries\\DotNET\\UnrealBuildTool\\UnrealBuildTool",
+			"args": [
+				"-projectfiles",
+				"-vscode",
+				"-project=C:\\Users\\teamc\\Documents\\Projects\\Unreal Projects\\Man-U-Facture\\Man_U_Facture.uproject",
+				"-game",
+				"-engine"
+			],
+			"console": "externalTerminal",
+			"stopAtEntry": false,
+			"cwd": "C:\\UE_5.0"
+		}
+	]
+}

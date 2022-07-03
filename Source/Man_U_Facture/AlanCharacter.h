@@ -8,6 +8,7 @@
 
 class UCameraComponent;
 class USpringArmComponent;
+class UHealthComponent;
 UCLASS()
 class MAN_U_FACTURE_API AAlanCharacter : public ACharacter
 {
@@ -41,4 +42,7 @@ private:
 
 	UPROPERTY(EditAnywhere, Category="Movement")
 	float MoveSpeed = 100.f;
+
+	UPROPERTY(EditAnywhere, Category = "Stats")
+	UHealthComponent* HealthComponent;
 };

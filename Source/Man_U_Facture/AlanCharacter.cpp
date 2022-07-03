@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "HealthComponent.h"
 // Sets default values
 AAlanCharacter::AAlanCharacter()
 {
@@ -21,14 +22,22 @@ AAlanCharacter::AAlanCharacter()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(CameraBoom);
- 
 }
 
 // Called when the game starts or when spawned
 void AAlanCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-	
+	//grabs the health component on the blueprint
+	HealthComponent = FindComponentByClass<UHealthComponent>();
+	if(!HealthComponent)
+	{
+		UE_LOG(LogTemp,Error,TEXT("No Health Component Attached!"));
+	}
+	else
+	{
+		UE_LOG(LogTemp,Warning,TEXT("Health Component Attached!"));
+	}
 }
 
 // Called every frame
@@ -52,7 +61,6 @@ void AAlanCharacter::TurnToMouse()
 	APlayerController* AlanController = UGameplayStatics::GetPlayerController(this, 0);
 	//gets hit result from cursor location in world space
 	if(!AlanController) return;
-	UE_LOG(LogTemp,Warning,TEXT("Looking at Mouse!"));
 	AlanController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility,false,Hit);
 	FRotator LookDirection = UKismetMathLibrary::FindLookAtRotation(GetCapsuleComponent()->GetComponentLocation(),Hit.ImpactPoint);
 	Controller->SetControlRotation(FRotator(0.f,LookDirection.Yaw,0.f));

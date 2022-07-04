@@ -31,6 +31,10 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	bool bHasDied = false;
+	void Die();
+
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

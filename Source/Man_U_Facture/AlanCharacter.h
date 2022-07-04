@@ -26,6 +26,9 @@ protected:
 
 	void Move(float Value);
 
+	APlayerController* AlanController;
+
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

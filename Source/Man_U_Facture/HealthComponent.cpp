@@ -2,7 +2,7 @@
 
 
 #include "HealthComponent.h"
-
+#include "GameFramework/Character.h"
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
 {
@@ -47,12 +47,40 @@ void UHealthComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActo
 //these arguments are what is required to be a delegate for the OnTakeAnyDamage listener
 void UHealthComponent::TakeDamage(AActor*DamagedActor, float Damage, const class UDamageType* DamageType, 
 class AController* InstigatedBy, AActor* DamageCauser)
-{
+{	
+	//returns out of the function if no damage was dealt
 	if(Damage < 0) 
 	{
 		return;
 	}
-
+	if(Health <= 0)
+	{
+		Die();
+	}
 	Health = FMath::Clamp(Health - Damage, 0.0f, MaxHealth);
 
+}
+
+void UHealthComponent::Die()
+{
+	AActor* Owner = GetOwner();
+	if(Owner)
+	{
+		UE_LOG(LogTemp,Warning,TEXT("Player Has Died!"));
+		//Have the controller spawn the Game Over Screen(create an event here, handle that in BP)
+		APawn* PlayerPawn = Cast<APawn>(Owner);
+		//Detach from controller causes crash, maybe I only do that when I have an animation
+		if(PlayerPawn)
+		PlayerPawn->DetachFromControllerPendingDestroy();
+		/*To Do
+		*
+			Tell game mode player died
+				*Pass stats over
+		*/
+	}
+	else
+	{
+		//log if the owner cast fails
+		UE_LOG(LogTemp,Error,TEXT("Owner Pawn Cast Failed!"));
+	}
 }

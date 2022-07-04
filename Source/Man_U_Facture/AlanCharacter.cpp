@@ -30,6 +30,7 @@ void AAlanCharacter::BeginPlay()
 	Super::BeginPlay();
 	//grabs the health component on the blueprint
 	HealthComponent = FindComponentByClass<UHealthComponent>();
+	AlanController = UGameplayStatics::GetPlayerController(this,0);
 	if(!HealthComponent)
 	{
 		UE_LOG(LogTemp,Error,TEXT("No Health Component Attached!"));
@@ -52,21 +53,24 @@ void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
+	
 }
-
 //Gets the cursor's location and rotates controller in that direction
 void AAlanCharacter::TurnToMouse()
 {
 	FHitResult Hit;
-	APlayerController* AlanController = UGameplayStatics::GetPlayerController(this, 0);
 	//gets hit result from cursor location in world space
+	
 	if(!AlanController) return;
 	AlanController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility,false,Hit);
 	FRotator LookDirection = UKismetMathLibrary::FindLookAtRotation(GetCapsuleComponent()->GetComponentLocation(),Hit.ImpactPoint);
-	Controller->SetControlRotation(FRotator(0.f,LookDirection.Yaw,0.f));
+	//this one goddamn line crashed the engine
+	//VARIABLE NAME CONSISTENCY IS IMPORTANT
+	AlanController->SetControlRotation(FRotator(0.f,LookDirection.Yaw,0.f));
 }
 
 void AAlanCharacter::Move(float Value)
 {
+	if(!AlanController) return;
 	AddMovementInput(GetCapsuleComponent()->GetForwardVector(),Value * MoveSpeed);
 }

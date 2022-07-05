@@ -46,6 +46,13 @@ void AAlanCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	TurnToMouse();
+
+	//checks the health component every frame if the character has died
+	if(HealthComponent->GetHasDied())
+	{
+		Die();
+	}
+	
 }
 
 // Called to bind functionality to input
@@ -73,4 +80,13 @@ void AAlanCharacter::Move(float Value)
 {
 	if(!AlanController) return;
 	AddMovementInput(GetCapsuleComponent()->GetForwardVector(),Value * MoveSpeed);
+}
+
+//Called on blueprint if player dies and any damage is taken
+void AAlanCharacter::Die()
+{
+	//Shoves player off of controller
+	DetachFromControllerPendingDestroy();
+	//Plays death animation
+	//The health component tells the game mode the player has died and the controller handles the UI
 }

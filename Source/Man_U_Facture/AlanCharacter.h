@@ -22,11 +22,14 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
+	APlayerController* AlanController;
+
 	void TurnToMouse();
 
 	void Move(float Value);
 
-	APlayerController* AlanController;
+	void Die();
+
 
 
 public:	

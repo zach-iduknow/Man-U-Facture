@@ -4,39 +4,25 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "HealthComponent.generated.h"
+#include "InventoryComponent.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class MAN_U_FACTURE_API UHealthComponent : public UActorComponent
+class MAN_U_FACTURE_API UInventoryComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UHealthComponent();
-	
-	UPROPERTY(EditAnywhere, Category="Vitality")
-	float MaxHealth = 100.f;
-
-	UPROPERTY(BlueprintReadOnly, Category="Vitality")
-	float Health;
-
-	//need UFUNCTION because it's a delegate
-	UFUNCTION()
-	void TakeDamage(AActor*DamagedActor, float Damage, const class UDamageType* DamageType, 
-	class AController* InstigatedBy, AActor* DamageCauser);
+	UInventoryComponent();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-
-	bool bHasDied = false;
-
-
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	bool GetHasDied();
+
+		
 };

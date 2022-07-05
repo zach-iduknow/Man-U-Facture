@@ -49,38 +49,18 @@ void UHealthComponent::TakeDamage(AActor*DamagedActor, float Damage, const class
 class AController* InstigatedBy, AActor* DamageCauser)
 {	
 	//returns out of the function if no damage was dealt
-	if(Damage < 0) 
-	{
-		return;
-	}
+	if(Damage < 0) return;
+	Health = FMath::Clamp(Health - Damage, 0.0f, MaxHealth);
 	if(Health <= 0)
 	{
-		Die();
+		bHasDied = true;
 	}
-	Health = FMath::Clamp(Health - Damage, 0.0f, MaxHealth);
-
+	if(!GetOwner()) return;
+	UE_LOG(LogTemp,Display,TEXT("%s has %f health"), *GetOwner()->GetName(),Health);
 }
 
-void UHealthComponent::Die()
+//getter for the protected bHasDied variable
+bool UHealthComponent::GetHasDied()
 {
-	AActor* Owner = GetOwner();
-	if(Owner)
-	{
-		UE_LOG(LogTemp,Warning,TEXT("Player Has Died!"));
-		//Have the controller spawn the Game Over Screen(create an event here, handle that in BP)
-		APawn* PlayerPawn = Cast<APawn>(Owner);
-		//Detach from controller causes crash, maybe I only do that when I have an animation
-		if(PlayerPawn)
-		PlayerPawn->DetachFromControllerPendingDestroy();
-		/*To Do
-		*
-			Tell game mode player died
-				*Pass stats over
-		*/
-	}
-	else
-	{
-		//log if the owner cast fails
-		UE_LOG(LogTemp,Error,TEXT("Owner Pawn Cast Failed!"));
-	}
+	return bHasDied;
 }

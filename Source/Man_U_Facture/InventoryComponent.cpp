@@ -2,6 +2,7 @@
 
 
 #include "InventoryComponent.h"
+#include "Resource.h"
 
 // Sets default values for this component's properties
 UInventoryComponent::UInventoryComponent()
@@ -31,4 +32,42 @@ void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FA
 
 	// ...
 }
+
+void UInventoryComponent::TakeWood(const FString ItemName, const int32 Amount)
+{
+	if(WoodInventory.Contains(ItemName))
+	{
+		WoodInventory[ItemName] = WoodInventory[ItemName] - Amount;
+	}
+	else
+	{
+		UE_LOG(LogTemp,Warning,TEXT("You don't have enough %s!"), *ItemName);
+	}
+}
+
+void UInventoryComponent::TakeChemical(const FString ItemName, const int32 Amount)
+{
+	if(ChemicalInventory.Contains(ItemName))
+	{
+		ChemicalInventory[ItemName] = ChemicalInventory[ItemName] - Amount;
+	}
+	else
+	{
+		UE_LOG(LogTemp,Warning,TEXT("You don't have enough %s!"), *ItemName);
+	}
+}
+
+void UInventoryComponent::TakeMetal(const FString ItemName, const int32 Amount)
+{
+	if(MetalInventory.Contains(ItemName))
+	{
+		MetalInventory[ItemName] = MetalInventory[ItemName] - Amount;
+	}
+	else
+	{
+		UE_LOG(LogTemp,Warning,TEXT("You don't have enough %s!"), *ItemName);
+	}
+}
+
+
 

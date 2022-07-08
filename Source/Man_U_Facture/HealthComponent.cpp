@@ -20,14 +20,11 @@ void UHealthComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-	
-	//this whole setup below is crucial for damage systems
-	//Getting the owning Actor and checking if it is valid
-	AActor* Owner = GetOwner();
-	if(Owner)
+
+	if(AActor* Owner = GetOwner())
 	{
 		//Adding the TakeDamage function(delegate) to the OnTakeAnyDamage listener
-		//Adds logic to the OnTakeAnyDamage listner to do a specific action once damage is taken
+		//Adds logic to the OnTakeAnyDamage listener to do a specific action once damage is taken
 		Owner->OnTakeAnyDamage.AddDynamic(this,&UHealthComponent::TakeDamage);
 	}
 	else 
@@ -60,7 +57,7 @@ class AController* InstigatedBy, AActor* DamageCauser)
 }
 
 //getter for the protected bHasDied variable
-bool UHealthComponent::GetHasDied()
+bool UHealthComponent::GetHasDied() const
 {
 	return bHasDied;
 }

@@ -9,9 +9,17 @@
 /**
  * 
  */
+class UInventoryComponent;
 UCLASS()
 class MAN_U_FACTURE_API AAlanController : public APlayerController
 {
 	GENERATED_BODY()
+
+public:
+	UPROPERTY(BlueprintReadOnly, Category="Inventory")
+	UInventoryComponent* PlayerInventory; 
+
+protected:
+	virtual void BeginPlay() override;
 	
 };

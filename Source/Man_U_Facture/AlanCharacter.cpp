@@ -31,6 +31,7 @@ void AAlanCharacter::BeginPlay()
 	//grabs the health component on the blueprint
 	HealthComponent = FindComponentByClass<UHealthComponent>();
 	AlanController = UGameplayStatics::GetPlayerController(this,0);
+	//checks to see if the health component is attached
 	if(!HealthComponent)
 	{
 		UE_LOG(LogTemp,Error,TEXT("No Health Component Attached!"));

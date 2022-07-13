@@ -20,7 +20,7 @@ void UHealthComponent::BeginPlay()
 	Super::BeginPlay();
 
 	// ...
-
+	//didn't know you could declare variables in the argument for an if statement
 	if(AActor* Owner = GetOwner())
 	{
 		//Adding the TakeDamage function(delegate) to the OnTakeAnyDamage listener

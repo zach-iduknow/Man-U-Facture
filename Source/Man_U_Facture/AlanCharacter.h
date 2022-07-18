@@ -9,6 +9,7 @@
 class UCameraComponent;
 class USpringArmComponent;
 class UHealthComponent;
+class UActionCast;
 UCLASS()
 class MAN_U_FACTURE_API AAlanCharacter : public ACharacter
 {
@@ -30,6 +31,8 @@ protected:
 
 	void Die();
 
+	//Used for harvesting and fighting
+	void Attack();
 
 
 public:	
@@ -51,4 +54,7 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Stats")
 	UHealthComponent* HealthComponent;
+
+	UPROPERTY(EditAnywhere, Category="Action")
+	UActionCast* ActionCast;
 };

@@ -8,7 +8,7 @@ UActionCast::UActionCast()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 
 	// ...
 }
@@ -28,7 +28,17 @@ void UActionCast::BeginPlay()
 void UActionCast::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
+	
 	// ...
+}
+
+FHitResult UActionCast::PerformCast() const
+{
+	FVector StartPoint = GetComponentLocation();
+	FVector ForwardVector = GetForwardVector();
+	FVector EndPoint = (ForwardVector * CastRange) + StartPoint;
+	FHitResult Hit;
+	GetWorld()->LineTraceSingleByChannel(Hit,StartPoint,EndPoint,ECC_GameTraceChannel1);
+	return Hit;
 }
 

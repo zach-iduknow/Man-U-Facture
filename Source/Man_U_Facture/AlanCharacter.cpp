@@ -7,6 +7,9 @@
 #include "Components/CapsuleComponent.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "HealthComponent.h"
+#include "HarvestTool.h"
+#include "ActionCast.h"
+#include "Resource.h"
 // Sets default values
 AAlanCharacter::AAlanCharacter()
 {
@@ -30,15 +33,18 @@ void AAlanCharacter::BeginPlay()
 	Super::BeginPlay();
 	//grabs the health component on the blueprint
 	HealthComponent = FindComponentByClass<UHealthComponent>();
+	//grabs the action cast component on the blueprint
+	ActionCast = FindComponentByClass<UActionCast>();
 	AlanController = UGameplayStatics::GetPlayerController(this,0);
 	//checks to see if the health component is attached
 	if(!HealthComponent)
 	{
 		UE_LOG(LogTemp,Error,TEXT("No Health Component Attached!"));
 	}
-	else
+	//checks to see if the action cast component is attached
+	if(!ActionCast)
 	{
-		UE_LOG(LogTemp,Warning,TEXT("Health Component Attached!"));
+		UE_LOG(LogTemp, Error, TEXT("No Action Cast Component Attached!"));
 	}
 }
 
@@ -49,11 +55,11 @@ void AAlanCharacter::Tick(float DeltaTime)
 	TurnToMouse();
 
 	//checks the health component every frame if the character has died
-	if(HealthComponent->GetHasDied())
+	if(HealthComponent && HealthComponent->GetHasDied())
 	{
 		Die();
 	}
-	
+	Attack();
 }
 
 // Called to bind functionality to input
@@ -61,6 +67,8 @@ void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
+
+	PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_Pressed,this, &AAlanCharacter::Attack);
 	
 }
 //Gets the cursor's location and rotates controller in that direction
@@ -82,6 +90,22 @@ void AAlanCharacter::Move(float Value)
 	if(!AlanController) return;
 	AddMovementInput(GetCapsuleComponent()->GetForwardVector(),Value * MoveSpeed);
 }
+
+void AAlanCharacter::Attack()
+{
+	if(!ActionCast) return;
+	FHitResult HitActor = ActionCast->PerformCast();
+	UE_LOG(LogTemp,Display,TEXT("Looking at %s"), HitActor.Component->GetName());
+	//checks to see if actor is a resource
+	if(AResource* Resource = Cast<AResource>(HitActor.GetActor()))
+	{
+		
+		//applies damage to the resource
+		UGameplayStatics::ApplyDamage(Resource,10.f,GetController(),this,UDamageType::StaticClass());
+	}
+	//continue with logic for enemy, then building
+}
+
 
 //Called on blueprint if player dies and any damage is taken
 void AAlanCharacter::Die()

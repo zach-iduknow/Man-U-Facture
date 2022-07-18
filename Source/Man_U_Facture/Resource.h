@@ -3,11 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "HealthComponent.h"
 #include "GameFramework/Actor.h"
 #include "Resource.generated.h"
 
 class UStaticMeshComponent;
 class UBoxComponent;
+class UHealthComponent;
 UCLASS()
 class MAN_U_FACTURE_API AResource : public AActor
 {
@@ -50,5 +52,9 @@ public:
 	FString GetType() const;
 	FString GetSubType() const;
 	int32 GetItemLevel() const;
+
+private:
+	UPROPERTY(EditAnywhere, Category="Stats")
+	UHealthComponent* HealthComponent;
 
 };

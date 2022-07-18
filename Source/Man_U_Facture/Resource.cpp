@@ -4,6 +4,7 @@
 #include "Resource.h"
 #include "Components/BoxComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "HealthComponent.h"
 
 // Sets default values
 AResource::AResource()
@@ -22,6 +23,11 @@ AResource::AResource()
 void AResource::BeginPlay()
 {
 	Super::BeginPlay();
+	HealthComponent = FindComponentByClass<UHealthComponent>();
+	if(!HealthComponent)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Resource %s doesn't have a health component!"), *GetName());
+	}
 	
 }
 
@@ -29,6 +35,11 @@ void AResource::BeginPlay()
 void AResource::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
+	if(HealthComponent && HealthComponent->GetHasDied())
+	{
+		Die();
+	}
 
 }
 
@@ -49,6 +60,8 @@ int32 AResource::GetItemLevel() const
 
 void AResource::Die()
 {
+	UE_LOG(LogTemp, Warning,TEXT("Ounch!"));
+	Destroy();
 	//spawn item drop in physical space based on the number dropped
 	//Add a little force to each object in the y and x or z direction
 }

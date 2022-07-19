@@ -59,7 +59,6 @@ void AAlanCharacter::Tick(float DeltaTime)
 	{
 		Die();
 	}
-	Attack();
 }
 
 // Called to bind functionality to input
@@ -68,7 +67,7 @@ void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
 
-	PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_Pressed,this, &AAlanCharacter::Attack);
+	PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_,this, &AAlanCharacter::Attack);
 	
 }
 //Gets the cursor's location and rotates controller in that direction
@@ -95,11 +94,10 @@ void AAlanCharacter::Attack()
 {
 	if(!ActionCast) return;
 	FHitResult HitActor = ActionCast->PerformCast();
-	UE_LOG(LogTemp,Display,TEXT("Looking at %s"), HitActor.Component->GetName());
 	//checks to see if actor is a resource
 	if(AResource* Resource = Cast<AResource>(HitActor.GetActor()))
 	{
-		
+		UE_LOG(LogTemp,Display,TEXT("Looking at %s"), *HitActor.Component->GetName());	
 		//applies damage to the resource
 		UGameplayStatics::ApplyDamage(Resource,10.f,GetController(),this,UDamageType::StaticClass());
 	}

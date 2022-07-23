@@ -29,8 +29,29 @@ void UInventoryComponent::BeginPlay()
 void UInventoryComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+}
 
-	// ...
+void UInventoryComponent::AddItem(FString ItemType, FString ItemName, int32 Amount)
+{
+	if(ItemType == "Wood")
+	{
+		uint32& WoodRef = WoodInventory.FindOrAdd(ItemName);
+		WoodRef += Amount;
+	}
+	else if(ItemType == "Metal")
+	{
+		uint32&  MetalRef = MetalInventory.FindOrAdd(ItemName);
+		MetalRef += Amount;
+	}
+	else if(ItemType == "Chemical")
+	{
+		uint32& ChemicalRef = ChemicalInventory.FindOrAdd(ItemName);
+		ChemicalRef += Amount;
+	}
+	else
+	{
+		UE_LOG(LogTemp,Warning,TEXT("This item is nothing!!!"));
+	}
 }
 
 void UInventoryComponent::TakeWood(const FString ItemName, const int32 Amount)

@@ -43,6 +43,10 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Stats")
 	int32 ItemLevel;
 
+	//UClass to define what item will be dropped
+	UPROPERTY(EditAnywhere, Category="Drops")
+	UClass* ItemDrop;
+	
 	//Destroys object and drops item on death
 	void Die();
 public:	

@@ -61,6 +61,14 @@ int32 AResource::GetItemLevel() const
 void AResource::Die()
 {
 	UE_LOG(LogTemp, Warning,TEXT("Ounch!"));
+	//for loop for item dropping
+	for(int32 i = 0; i < 3; i++)
+	{
+		FVector Location = GetActorLocation() + FVector(0.f,10.f,0.f);
+		FRotator Rotation = FRotator::ZeroRotator;
+		//AActor* SpawnedItem = GetWorld()->SpawnActor();
+		
+	}
 	Destroy();
 	//spawn item drop in physical space based on the number dropped
 	//Add a little force to each object in the y and x or z direction

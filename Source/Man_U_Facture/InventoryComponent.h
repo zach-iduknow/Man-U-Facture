@@ -22,23 +22,34 @@ protected:
 
 	//using TMap to map item names to their respective slot in the map
 	UPROPERTY(VisibleAnywhere, Category = "Resources")
-	TMap<FString, int32> WoodInventory;
+	TMap<FString, uint32> WoodInventory;
 
 	UPROPERTY(VisibleAnywhere, Category = "Resources")
-	TMap<FString, int32> MetalInventory;
+	TMap<FString, uint32> MetalInventory;
 	
 	//this one is for stuff like glue and rubber
 	UPROPERTY(VisibleAnywhere, Category = "Resources")
-	TMap<FString, int32> ChemicalInventory;
+	TMap<FString, uint32> ChemicalInventory;
 
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UFUNCTION(BlueprintCallable, Category="Inventory Management")
+	void AddWood(const FString ItemName, const int32 Amount);
+
+	UFUNCTION(BlueprintCallable, Category="Inventory Management")
+	void AddMetal(const FString ItemName, const int32 Amount);
+
+	UFUNCTION(BlueprintCallable, Category="Inventory Management")
+	void AddChemical(const FString ItemName, const int32 Amount);
+
+	void AddItem(FString ItemType, FString ItemName, int32 Amount);
 	
 	void TakeWood(const FString ItemName, const int32 Amount);
 	
 	void TakeMetal(const FString ItemName, const int32 Amount);
-
+	
 	void TakeChemical(const FString ItemName, const int32 Amount);
 		
 };

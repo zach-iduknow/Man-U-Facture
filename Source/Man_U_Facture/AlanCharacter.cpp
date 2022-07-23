@@ -66,8 +66,6 @@ void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
-
-	PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_,this, &AAlanCharacter::Attack);
 	
 }
 //Gets the cursor's location and rotates controller in that direction

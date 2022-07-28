@@ -34,16 +34,7 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-	UFUNCTION(BlueprintCallable, Category="Inventory Management")
-	void AddWood(const FString ItemName, const int32 Amount);
-
-	UFUNCTION(BlueprintCallable, Category="Inventory Management")
-	void AddMetal(const FString ItemName, const int32 Amount);
-
-	UFUNCTION(BlueprintCallable, Category="Inventory Management")
-	void AddChemical(const FString ItemName, const int32 Amount);
-
+	
 	void AddItem(FString ItemType, FString ItemName, int32 Amount);
 	
 	void TakeWood(const FString ItemName, const int32 Amount);

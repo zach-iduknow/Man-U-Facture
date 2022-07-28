@@ -6,10 +6,13 @@
 #include "Kismet/GameplayStatics.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/KismetMathLibrary.h"
+#include "Blueprint/AIBlueprintHelperLibrary.h"
 #include "HealthComponent.h"
 #include "HarvestTool.h"
 #include "ActionCast.h"
 #include "Resource.h"
+#include "GameFramework/PawnMovementComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 // Sets default values
 AAlanCharacter::AAlanCharacter()
 {
@@ -52,8 +55,13 @@ void AAlanCharacter::BeginPlay()
 void AAlanCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	TurnToMouse();
-
+	//TurnToMouse();
+	RotateCharacter(DeltaTime, NewRotation);
+	//checks to see if move speed has changed and sets the new speed on the component
+	if(GetCharacterMovement()->MaxWalkSpeed != MoveSpeed)
+	{
+		GetCharacterMovement()->MaxWalkSpeed = MoveSpeed;
+	}
 	//checks the health component every frame if the character has died
 	if(HealthComponent && HealthComponent->GetHasDied())
 	{
@@ -65,10 +73,14 @@ void AAlanCharacter::Tick(float DeltaTime)
 void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
+
+	PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_Pressed,this,&AAlanCharacter::ClickMove);
+	//trying to replace this with point and click
+	//PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
 	
 }
 //Gets the cursor's location and rotates controller in that direction
+//this again, might be unnecessary with the point and click, maybe combine this when the player clicks on something
 void AAlanCharacter::TurnToMouse()
 {
 	FHitResult Hit;
@@ -82,12 +94,34 @@ void AAlanCharacter::TurnToMouse()
 	AlanController->SetControlRotation(FRotator(0.f,LookDirection.Yaw,0.f));
 }
 
+/*
 void AAlanCharacter::Move(float Value)
 {
 	if(!AlanController) return;
 	AddMovementInput(GetCapsuleComponent()->GetForwardVector(),Value * MoveSpeed);
 }
+*/
 
+void AAlanCharacter::ClickMove()
+{
+	FHitResult Hit;
+	if(!AlanController) return;
+	AlanController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility,false, Hit);
+	NewRotation = UKismetMathLibrary::FindLookAtRotation(GetCapsuleComponent()->GetComponentLocation(),Hit.Location);
+	//UAIBlueprintHelperLibrary::SimpleMoveToLocation(AlanController,Hit.Location);
+	
+}
+
+void AAlanCharacter::RotateCharacter(float DeltaTime, FRotator Direction)
+{
+	FRotator CurrentRotation= GetCapsuleComponent()->GetComponentRotation();
+	if(CurrentRotation != Direction)
+	{
+		GetCapsuleComponent()->SetWorldRotation(FMath::RInterpTo(GetCapsuleComponent()->GetComponentRotation(),Direction,DeltaTime,TurnSpeed));
+	}
+}
+
+//with a point and click interface, the entire ActionCast may be useless(I'm cool with that)
 void AAlanCharacter::Attack()
 {
 	if(!ActionCast) return;

@@ -22,13 +22,19 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
+	UPROPERTY()
 	APlayerController* AlanController;
 
 	void TurnToMouse();
 
 	void Move(float Value);
 
+	//using this to test a point and click move system
+	void ClickMove();
+
+	//used to rotate pawn to new location
+	void RotateCharacter(float DeltaTime, FRotator Direction = FRotator::ZeroRotator);
 	void Die();
 
 	//Used for harvesting and fighting
@@ -49,12 +55,20 @@ private:
 	UPROPERTY(EditAnywhere, Category="Camera")
 	USpringArmComponent* CameraBoom;
 
+	
 	UPROPERTY(EditAnywhere, Category="Movement")
 	float MoveSpeed = 100.f;
+	
+	
+	UPROPERTY(EditAnywhere, Category="Movement")
+	float TurnSpeed = 5.f;
 
+	FRotator NewRotation;
+	
 	UPROPERTY(EditAnywhere, Category = "Stats")
 	UHealthComponent* HealthComponent;
 
 	UPROPERTY(EditAnywhere, Category="Action")
 	UActionCast* ActionCast;
+
 };

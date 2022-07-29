@@ -74,7 +74,7 @@ void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_Pressed,this,&AAlanCharacter::ClickMove);
+	//PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_Pressed,this,&AAlanCharacter::ClickMove);
 	//trying to replace this with point and click
 	//PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
 	
@@ -102,16 +102,17 @@ void AAlanCharacter::Move(float Value)
 }
 */
 
+/*
+*doing this in BP
 void AAlanCharacter::ClickMove()
 {
 	FHitResult Hit;
 	if(!AlanController) return;
 	AlanController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility,false, Hit);
 	NewRotation = UKismetMathLibrary::FindLookAtRotation(GetCapsuleComponent()->GetComponentLocation(),Hit.Location);
-	//UAIBlueprintHelperLibrary::SimpleMoveToLocation(AlanController,Hit.Location);
-	
+	UAIBlueprintHelperLibrary::SimpleMoveToLocation(AlanController,Hit.Location);
 }
-
+*/
 void AAlanCharacter::RotateCharacter(float DeltaTime, FRotator Direction)
 {
 	FRotator CurrentRotation= GetCapsuleComponent()->GetComponentRotation();

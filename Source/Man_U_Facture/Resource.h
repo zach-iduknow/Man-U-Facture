@@ -36,7 +36,7 @@ protected:
 
 	//Subtype is what kind of resource it is in respect to it's category
 	UPROPERTY(EditAnywhere, Category="Stats")
-	FString SubType = TEXT("");
+	FString Name = TEXT("");
 
 	//what level of resource this is
 	//this denotes what tool is needed and generally what crafting recipes need it
@@ -54,7 +54,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	FString GetType() const;
-	FString GetSubType() const;
+	FString GetName() const;
 	int32 GetItemLevel() const;
 
 private:

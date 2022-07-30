@@ -4,15 +4,12 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "Components/CapsuleComponent.h"
-#include "Kismet/KismetMathLibrary.h"
 #include "Blueprint/AIBlueprintHelperLibrary.h"
 #include "HealthComponent.h"
 #include "HarvestTool.h"
-#include "ActionCast.h"
 #include "Resource.h"
-#include "GameFramework/PawnMovementComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Components/BoxComponent.h"
 // Sets default values
 AAlanCharacter::AAlanCharacter()
 {
@@ -28,6 +25,9 @@ AAlanCharacter::AAlanCharacter()
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
 	Camera->SetupAttachment(CameraBoom);
+
+	InteractRange = CreateDefaultSubobject<UBoxComponent>(TEXT("Interact Range"));
+	InteractRange->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned
@@ -37,17 +37,11 @@ void AAlanCharacter::BeginPlay()
 	//grabs the health component on the blueprint
 	HealthComponent = FindComponentByClass<UHealthComponent>();
 	//grabs the action cast component on the blueprint
-	ActionCast = FindComponentByClass<UActionCast>();
 	AlanController = UGameplayStatics::GetPlayerController(this,0);
 	//checks to see if the health component is attached
 	if(!HealthComponent)
 	{
 		UE_LOG(LogTemp,Error,TEXT("No Health Component Attached!"));
-	}
-	//checks to see if the action cast component is attached
-	if(!ActionCast)
-	{
-		UE_LOG(LogTemp, Error, TEXT("No Action Cast Component Attached!"));
 	}
 }
 
@@ -57,6 +51,7 @@ void AAlanCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 	//TurnToMouse();
 	RotateCharacter(DeltaTime, NewRotation);
+	
 	//checks to see if move speed has changed and sets the new speed on the component
 	if(GetCharacterMovement()->MaxWalkSpeed != MoveSpeed)
 	{
@@ -73,68 +68,45 @@ void AAlanCharacter::Tick(float DeltaTime)
 void AAlanCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	//PlayerInputComponent->BindAction(TEXT("Action"),EInputEvent::IE_Pressed,this,&AAlanCharacter::ClickMove);
-	//trying to replace this with point and click
-	//PlayerInputComponent->BindAxis(TEXT("MoveForward"),this, &AAlanCharacter::Move);
-	
-}
-//Gets the cursor's location and rotates controller in that direction
-//this again, might be unnecessary with the point and click, maybe combine this when the player clicks on something
-void AAlanCharacter::TurnToMouse()
-{
-	FHitResult Hit;
-	//gets hit result from cursor location in world space
-	
-	if(!AlanController) return;
-	AlanController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility,false,Hit);
-	FRotator LookDirection = UKismetMathLibrary::FindLookAtRotation(GetCapsuleComponent()->GetComponentLocation(),Hit.ImpactPoint);
-	//this one goddamn line crashed the engine
-	//VARIABLE NAME CONSISTENCY IS IMPORTANT
-	AlanController->SetControlRotation(FRotator(0.f,LookDirection.Yaw,0.f));
 }
 
-/*
-void AAlanCharacter::Move(float Value)
-{
-	if(!AlanController) return;
-	AddMovementInput(GetCapsuleComponent()->GetForwardVector(),Value * MoveSpeed);
-}
-*/
-
-/*
-*doing this in BP
-void AAlanCharacter::ClickMove()
-{
-	FHitResult Hit;
-	if(!AlanController) return;
-	AlanController->GetHitResultUnderCursor(ECollisionChannel::ECC_Visibility,false, Hit);
-	NewRotation = UKismetMathLibrary::FindLookAtRotation(GetCapsuleComponent()->GetComponentLocation(),Hit.Location);
-	UAIBlueprintHelperLibrary::SimpleMoveToLocation(AlanController,Hit.Location);
-}
-*/
+//smoothly rotates the controller to the clicked position
 void AAlanCharacter::RotateCharacter(float DeltaTime, FRotator Direction)
 {
-	FRotator CurrentRotation= GetCapsuleComponent()->GetComponentRotation();
-	if(CurrentRotation != Direction)
+	if(!AlanController) return;
+	if(AlanController->GetControlRotation() != Direction)
 	{
-		GetCapsuleComponent()->SetWorldRotation(FMath::RInterpTo(GetCapsuleComponent()->GetComponentRotation(),Direction,DeltaTime,TurnSpeed));
+		FRotator SmoothRotation = FMath::RInterpTo(GetControlRotation(),Direction,DeltaTime,TurnSpeed);
+		AlanController->SetControlRotation(SmoothRotation);
 	}
 }
 
 //with a point and click interface, the entire ActionCast may be useless(I'm cool with that)
-void AAlanCharacter::Attack()
+void AAlanCharacter::Interact(AActor* HitActor)
 {
-	if(!ActionCast) return;
-	FHitResult HitActor = ActionCast->PerformCast();
-	//checks to see if actor is a resource
-	if(AResource* Resource = Cast<AResource>(HitActor.GetActor()))
+	if(AResource* Resource = Cast<AResource>(HitActor))
 	{
-		UE_LOG(LogTemp,Display,TEXT("Looking at %s"), *HitActor.Component->GetName());	
-		//applies damage to the resource
-		UGameplayStatics::ApplyDamage(Resource,10.f,GetController(),this,UDamageType::StaticClass());
+		//check if player can harvest
+		const FString Type = Resource->GetType();
+		if(Type == "Wood")
+		{
+			UE_LOG(LogTemp,Warning,TEXT("Hit Wood!"));
+		}
+		else if(Type == "Metal")
+		{
+			UE_LOG(LogTemp,Warning,TEXT("Hit Metal"));
+		}
+		else if(Type == "Chemical")
+		{
+			UE_LOG(LogTemp,Warning,TEXT("Hit Chemical"));
+		}
+		else
+		{
+			UE_LOG(LogTemp,Warning,TEXT("No Type Found!"));
+		}
+		
 	}
-	//continue with logic for enemy, then building
+	//add logic for enemies and buildings
 }
 
 

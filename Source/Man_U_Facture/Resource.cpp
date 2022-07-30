@@ -48,9 +48,9 @@ FString AResource::GetType() const
 	return Type;
 }
 
-FString AResource::GetSubType() const
+FString AResource::GetName() const
 {
-	return SubType;
+	return Name;
 }
 
 int32 AResource::GetItemLevel() const

@@ -10,6 +10,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class UHealthComponent;
 class UActionCast;
+class UBoxComponent;
 UCLASS()
 class MAN_U_FACTURE_API AAlanCharacter : public ACharacter
 {
@@ -37,8 +38,9 @@ protected:
 	void RotateCharacter(float DeltaTime, FRotator Direction = FRotator::ZeroRotator);
 	void Die();
 
-	//Used for harvesting and fighting
-	void Attack();
+	//function to see what player clicked on and what to do
+	UFUNCTION(BlueprintCallable, Category="Interaction")
+	void Interact(AActor* HitActor);
 
 
 public:	
@@ -48,6 +50,9 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	UPROPERTY(BlueprintReadWrite, Category="Movement")
+	FRotator NewRotation;
+
 private:
 	UPROPERTY(EditAnywhere, Category="Camera")
 	UCameraComponent* Camera;
@@ -55,20 +60,17 @@ private:
 	UPROPERTY(EditAnywhere, Category="Camera")
 	USpringArmComponent* CameraBoom;
 
+	UPROPERTY(EditAnywhere, Category="Interaction")
+	UBoxComponent* InteractRange;
 	
 	UPROPERTY(EditAnywhere, Category="Movement")
-	float MoveSpeed = 100.f;
-	
+	float MoveSpeed = 600.f;
 	
 	UPROPERTY(EditAnywhere, Category="Movement")
-	float TurnSpeed = 5.f;
-
-	FRotator NewRotation;
+	float TurnSpeed = 12.f;
 	
 	UPROPERTY(EditAnywhere, Category = "Stats")
 	UHealthComponent* HealthComponent;
-
-	UPROPERTY(EditAnywhere, Category="Action")
-	UActionCast* ActionCast;
+	
 
 };

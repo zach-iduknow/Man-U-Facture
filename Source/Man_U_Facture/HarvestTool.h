@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "HarvestTool.generated.h"
-class UStaticMesh;
+class AToolComponent;
 class USceneComponent;
 UCLASS()
 class MAN_U_FACTURE_API AHarvestTool : public AActor
@@ -19,6 +19,10 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	//total level of every tool component
+	int32 ItemLevel; 
+	
 	
 
 public:	
@@ -27,10 +31,14 @@ public:
 
 	UPROPERTY(EditAnywhere, Category="Object")
 	USceneComponent* SceneRoot;
-	
-	UPROPERTY(EditAnywhere, Category="Cosmetic")
-	UStaticMeshComponent* AxeHead;
 
-	UPROPERTY(EditAnywhere, Category="Cosmetic")
-	UStaticMeshComponent* AxeHandle;
+	//Meshes for the tool
+	UPROPERTY(BlueprintReadWrite, Category="Visual")
+	UStaticMeshComponent* HeadMesh;
+
+	UPROPERTY(BlueprintReadWrite, Category="Visual")
+	UStaticMeshComponent* HandleMesh;
+	
+	UPROPERTY(VisibleAnywhere,Category="Stats")
+	int32 ToolLevel;
 };

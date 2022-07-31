@@ -4,28 +4,27 @@
 #include "HarvestTool.h"
 #include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "ToolComponent.h"
 // Sets default values
 AHarvestTool::AHarvestTool()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 
 	SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	RootComponent = SceneRoot;
 
-	AxeHandle = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Axe Handle"));
-	AxeHandle->SetupAttachment(RootComponent);
-	
-	AxeHead = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Axe Head"));
-	AxeHead->SetupAttachment(AxeHandle);
+	HandleMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Handle"));
+	HandleMesh->SetupAttachment(RootComponent);
 
+	HeadMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Head"));
+	HeadMesh->SetupAttachment(HandleMesh);
 }
 
 // Called when the game starts or when spawned
 void AHarvestTool::BeginPlay()
 {
 	Super::BeginPlay();
-	
 }
 
 // Called every frame

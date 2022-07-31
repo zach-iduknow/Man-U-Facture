@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "TraceQueryTestResults.h"
 #include "GameFramework/Character.h"
 #include "AlanCharacter.generated.h"
 
